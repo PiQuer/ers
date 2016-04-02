@@ -1,6 +1,6 @@
 <?php
 
-$title = 'Delete Item from shopping cart';
+$title = 'Artikel aus dem Einkaufswagen löschen';
 $this->headTitle($title);
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
@@ -24,7 +24,7 @@ $url = $this->url('product', array(
 <div>
     <input type="hidden" name="participant_id" value="<?php echo (int) $participant->getId(); ?>" />
     <input type="hidden" name="item_id" value="<?php echo (int) $item->getId(); ?>" />
-    <input type="submit" name="del" value="Yes" class="btn btn-danger" id="submitbutton" />
-    <a href="<?php echo $this->url($breadcrumb->route, $breadcrumb->params, $breadcrumb->options); ?>">Cancel</a>
+    <input type="submit" name="del" value="Ja" class="btn btn-danger" id="submitbutton" />
+    <a href="<?php echo $this->url($breadcrumb->route, $breadcrumb->params, $breadcrumb->options); ?>">Abbrechen</a>
 </div>
 </form>
