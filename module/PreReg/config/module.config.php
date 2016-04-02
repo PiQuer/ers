@@ -30,17 +30,17 @@ return array(
                 'resource'  => 'controller/PreReg\Controller\Product',
             ),
             'product' => array(
-                'label' => 'Products',
+                'label' => 'Produkte',
                 'route' => 'product',
                 'resource'  => 'controller/PreReg\Controller\Product',
             ),
             'participant' => array(
-                'label' => 'Personal Details',
+                'label' => 'Persönliche Angaben',
                 'route' => 'participant',
                 'resource'  => 'controller/PreReg\Controller\Participant',
             ),
             'order' => array(
-                'label' => 'My Shopping Cart',
+                'label' => 'Mein Einkaufswagen',
                 'route' => 'order',
                 'resource'  => 'controller/PreReg\Controller\Order',
             ),
@@ -70,7 +70,7 @@ return array(
                 'resource'  => 'controller/zfcuser:register',
             ),*/
             'profile' => array(
-                'label' => 'My Profile',
+                'label' => 'Mein Profil',
                 'route' => 'profile',
                 'action' => '',
                 'resource'  => 'controller/PreReg\Controller\Profile',
@@ -96,7 +96,7 @@ return array(
                         <i class="fa fa-circle fa-stack-2x green"></i>
                         <i class="fa fa-question fa-stack-1x fa-inverse"></i>
                     </span>',*/
-                'label' => 'Help',
+                'label' => 'Hilfe',
                 'route' => 'info',
                 'action' => 'help',
                 'resource'  => 'controller/PreReg\Controller\Info',
@@ -104,25 +104,25 @@ return array(
         ),
         'checkout_nav' => array(
             'mycart' => array(
-                'label' => 'Shopping Cart',
+                'label' => 'Einkaufswagen',
                 'route' => 'order',
                 'action' => 'overview',
                 'resource' => 'controller/PreReg\Controller\Order',
             ),
             'buyer' => array(
-                'label' => 'Buyer',
+                'label' => 'Käufer',
                 'route' => 'order',
                 'action' => 'buyer',
                 'resource' => 'controller/PreReg\Controller\Order',
             ),
             'payment' => array(
-                'label' => 'Payment type    ',
+                'label' => 'Zahlungsart    ',
                 'route' => 'order',
                 'action' => 'payment',
                 'resource' => 'controller/PreReg\Controller\Order',
             ),
             'checkout' => array(
-                'label' => 'Checkout',
+                'label' => 'Kasse',
                 'route' => 'order',
                 'action' => 'checkout',
                 'resource' => 'controller/PreReg\Controller\Order',
@@ -130,25 +130,25 @@ return array(
         ),
         'profile_nav' => array(
             'change-data' => array(
-                'label' => 'Change my user data',
+                'label' => 'Persönliche Angaben ändern',
                 'route' => 'profile',
                 'action' => 'change',
                 'resource' => 'controller/PreReg\Controller\Profile',
             ),
             'change-password' => array(
-                'label' => 'Change my password',
+                'label' => 'Passwort ändern',
                 'route' => 'zfcuser/changepassword',
                 #'action' => '',
                 'resource' => 'controller/PreReg\Controller\Profile',
             ),
             'package' => array(
-                'label' => 'View tickets',
+                'label' => 'Tickets anzeigen',
                 'route' => 'package',
                 #'action' => '',
                 'resource' => 'controller/PreReg\Controller\Package',
             ),
             'person' => array(
-                'label' => 'My Persons',
+                'label' => 'Meine Personen',
                 'route' => 'profile',
                 'action' => 'participant',
                 'resource' => 'controller/PreReg\Controller\Profile:participant',
