@@ -1,6 +1,6 @@
 <?php
 
-$title = 'My Shopping Cart';
+$title = 'Mein Einkaufswagen';
 $this->headTitle($title);
 ?>
 
@@ -25,10 +25,10 @@ echo $this->navigation()
 <div class="clear-both"></div>
 
 <div class="checkout">
-    <a class="btn btn-lg btn-primary" href="<?php echo $this->url('order', array('action' => 'buyer')) ?>">Continue</a>
+    <a class="btn btn-lg btn-primary" href="<?php echo $this->url('order', array('action' => 'buyer')) ?>">Weiter</a>
 </div>
 <div class="reset-cart">
-    <a href="<?php echo $this->url('cart', array('action' => 'reset')) ?>">Reset My Shopping Cart and My Persons</a>
+    <a href="<?php echo $this->url('cart', array('action' => 'reset')) ?>">Meinen Einkaufswagen und pers&ouml;nliche Angaben zur&uuml;cksetzen.</a>
 </div>
     <div>
         <?php 
@@ -43,7 +43,7 @@ echo $this->navigation()
                     $participant = 'further items';
                     $edit_participant = false;
                 else:
-                    $participant = $user->getFirstname().' '.$user->getSurname().' ('.$user->getAge()->format('%Y years').')';
+                    $participant = $user->getFirstname().' '.$user->getSurname().' ('.$user->getAge()->format('%Y Jahre').')';
                     $edit_participant = true;
                 endif;
         ?>
@@ -61,9 +61,9 @@ echo $this->navigation()
                 <?php if(count($package->getItems()) != 0): ?>
                 <table class="table">
                     <tr>
-                        <th>Product</th>
-                        <th class="cart-amount">Amount</th>
-                        <th class="cart-price">Price</th>
+                        <th>Produkt</th>
+                        <th class="cart-amount">Anzahl</th>
+                        <th class="cart-price">Preis</th>
                         <th class="cart-tool"></th>
                     </tr>
                     <?php
@@ -175,7 +175,7 @@ echo $this->navigation()
         <div>
             <table class="table sum-table">
                 <tr>
-                    <th><span style="font-size: 18px;">Order amount:</span></th>
+                    <th><span style="font-size: 18px;">Summe:</span></th>
                     <th><span style="font-size: 18px;"><?php echo $this->currencyFormat($order->getPrice(), 'EUR', null, 'de_DE'); ?></span></th>
                 </tr>
             </table>
@@ -184,5 +184,5 @@ echo $this->navigation()
  
  <div class="clear-both"></div>
  <div class="checkout">
-     <a class="btn btn-lg btn-primary" href="<?php echo $this->url('order', array('action' => 'buyer')) ?>">Continue</a>
+     <a class="btn btn-lg btn-primary" href="<?php echo $this->url('order', array('action' => 'buyer')) ?>">Weiter</a>
  </div>
