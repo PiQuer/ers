@@ -67,7 +67,7 @@ class OptionService
         }
         $options[] = array(
             'value' => 0,
-            'label' => 'no Country',
+            'label' => 'kein Land',
             'selected' => $selected,
         );
         foreach($countries as $country) {

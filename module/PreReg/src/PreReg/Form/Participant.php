@@ -127,7 +127,7 @@ class Participant extends Form implements InputFilterProviderInterface
                 'class' => 'form-control form-element',
             ),
             'options' => array(
-                'label' => 'Woher kommst du?',
+                'label' => 'Land',
                 'label_attributes' => array(
                     'class'  => 'media-object',
                 ),
