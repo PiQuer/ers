@@ -388,7 +388,7 @@ class ProductController extends AbstractActionController {
         /*
          * Set form values
          */
-        $form->get('submit')->setAttribute('value', 'Add to Cart');
+        $form->get('submit')->setAttribute('value', 'In den Einkaufswagen');
         
         /*
          * build participant select options
