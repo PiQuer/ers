@@ -63,7 +63,7 @@ class ProductView extends Form
                 'class' => 'form-control form-element',
             ),
             'options' => array(
-                'label' => 'This ticket belongs to:',
+                'label' => 'Dieses Ticket gehört:',
                 'label_attributes' => array(
                     'class'  => 'media-object',
                     'id' => 'participant',
@@ -79,7 +79,7 @@ class ProductView extends Form
                 'class' => 'checkbox-inline',
             ),
             'options' => array(
-                'label' => 'Agegroup',
+                'label' => 'Altersgruppe',
                 'label_attributes' => array(
                     'class'  => 'media-object',
                 ),
@@ -93,7 +93,7 @@ class ProductView extends Form
             'name' => 'submit',
             'attributes' => array(
                 'type'  => 'submit',
-                'value' => 'Go',
+                'value' => 'Los',
                 'id' => 'submitbutton',
                 'class' => 'btn btn-primary',
             ),
@@ -185,7 +185,7 @@ class ProductView extends Form
                         }
                         if($v->getDisabled()) {
                             $disabled = true;
-                            $value = $v->getValue().' (sold out)';
+                            $value = $v->getValue().' (ausverkauft)';
                         } else {
                             $disabled = false;
                             $value = $v->getValue();
@@ -255,7 +255,7 @@ class ProductView extends Form
                     'name' => 'Callback',
                     'options' => array(
                         'messages' => array(
-                            \Zend\Validator\Callback::INVALID_VALUE => 'Please select a person.',
+                            \Zend\Validator\Callback::INVALID_VALUE => 'Bitte eine Person auswählen.',
                         ),
                         'callback' => function($value, $context=array()) {
                             if(is_numeric($value)) {
@@ -275,7 +275,7 @@ class ProductView extends Form
                     'name' => 'Callback',
                     'options' => array(
                         'messages' => array(
-                            \Zend\Validator\Callback::INVALID_VALUE => 'Unable to add personalized product to person without birthdate. Please add date of birth in My Person list.',
+                            \Zend\Validator\Callback::INVALID_VALUE => 'Personalisiertes Produkt nur mit Geburtstag möglich. Bitte den Geburtstag im Menüpunkt "Meine Personen" hinzufügen.',
                         ),
                         'callback' => function($value, $context=array()) {
                             $cartContainer = new Container('cart');
@@ -308,7 +308,7 @@ class ProductView extends Form
                     'name' => 'Callback',
                     'options' => array(
                         'messages' => array(
-                            \Zend\Validator\Callback::INVALID_VALUE => 'Please select a agegroup.',
+                            \Zend\Validator\Callback::INVALID_VALUE => 'Bitte eine Altersgruppe auswählen.',
                         ),
                         'callback' => function($value, $context=array()) {
                             if(is_numeric($value)) {
@@ -348,7 +348,7 @@ class ProductView extends Form
                     'name' => 'Callback',
                     'options' => array(
                         'messages' => array(
-                            \Zend\Validator\Callback::INVALID_VALUE => 'Please select a product variant.',
+                            \Zend\Validator\Callback::INVALID_VALUE => 'Bitte eine Produktvariante auswählen.',
                         ),
                         'callback' => function($values, $context=array()) {
                             foreach($values as $key => $value) {

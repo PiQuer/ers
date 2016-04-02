@@ -131,7 +131,7 @@
                 </div>
                 <div class="col-md-6">
                     <?php if(count($product->getChildProducts()) > 0): ?>
-                    <h3>Included Items:</h3>
+                    <h3>Einschlie&szlig;lich:</h3>
                     <?php foreach($product->getChildProducts() as $package): 
                         $child = $package->getSubProduct(); ?>
                         <h4><?php echo $child->getName(); ?></h4>
