@@ -1,26 +1,26 @@
 <?php
 
 if($emptycart) :
-    $title = 'Your Shopping Cart is empty now';
+    $title = 'Der Einkaufswagen wurde geleert';
     $this->headTitle($title);
     $this->headMeta()->appendHttpEquiv('Refresh', '3;URL='.$this->url('product'));?>
     <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-    <p>You are being redirected, please click <a href="<?php echo $this->url('product') ?>">here</a> if your browser does not redirect you.</p>
+    <p>Du wirst weitergeleitet, bitt <a href="<?php echo $this->url('product') ?>">hier</a> klicken, falls dein Browser dich nicht weiterleitet.</p>
 <?php 
 else:
-    $title = 'Empty your Shopping Cart and My Person list';
+    $title = 'Einkaufswagen und persönliche Angaben leeren';
     $this->headTitle($title);
     ?>
 
     <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-    <p>Are you sure that you want to empty your shopping cart and your My Person list?</p>
+    <p>Bist du sicher, dass du den Einkaufswagen und die Liste der Personen leeren m&ouml;chtest?</p>
     <?php $url = $this->url('cart', array('action' => 'reset')); ?>
     <form action="<?php echo $url; ?>" method="post">
     <div>
-        <input type="submit" name="del" value="Yes" class="btn btn-danger" id="submitbutton" />
-        <a href="<?php echo $this->url($breadcrumb->route, $breadcrumb->params, $breadcrumb->options); ?>">Cancel</a>
+        <input type="submit" name="del" value="Ja" class="btn btn-danger" id="submitbutton" />
+        <a href="<?php echo $this->url($breadcrumb->route, $breadcrumb->params, $breadcrumb->options); ?>">Abbrechen</a>
     </div>
     </form>
 <?php endif;
