@@ -25,12 +25,12 @@ class Buyer extends Form
             'name' => 'firstname', 
             'type' => 'Zend\Form\Element\Text', 
             'attributes' => array( 
-                'placeholder' => 'First name...', 
+                'placeholder' => 'Vorname...', 
                 'required' => 'required', 
                 'class' => 'form-control form-element',
             ), 
             'options' => array( 
-                'label' => 'First name', 
+                'label' => 'Vorname', 
                 'label_attributes' => array(
                     'class'  => 'media-object',
                 ),
@@ -41,12 +41,12 @@ class Buyer extends Form
             'name' => 'surname', 
             'type' => 'Zend\Form\Element\Text', 
             'attributes' => array( 
-                'placeholder' => 'Surname...', 
+                'placeholder' => 'Nachname...', 
                 'required' => 'required', 
                 'class' => 'form-control form-element',
             ), 
             'options' => array( 
-                'label' => 'Surname', 
+                'label' => 'Nachname', 
                 'label_attributes' => array(
                     'class'  => 'media-object',
                 ),
@@ -57,7 +57,7 @@ class Buyer extends Form
             'name' => 'email',
             'type' => 'Zend\Form\Element\Email', 
             'attributes' => array( 
-                'placeholder' => 'Email Address...', 
+                'placeholder' => 'Emailaddresse...', 
                 #'required' => 'required', 
                 'class' => 'form-control form-element',
             ), 
@@ -78,7 +78,7 @@ class Buyer extends Form
             'name' => 'submit',
             'attributes' => array(
                 'type'  => 'submit',
-                'value' => 'Save & Continue',
+                'value' => 'Speichern & Fortsetzen',
                 'id' => 'submitbutton',
                 'class' => 'btn btn-primary',
             ),
