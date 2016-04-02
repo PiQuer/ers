@@ -1,6 +1,6 @@
 <?php
 
-$title = 'My Shopping Cart';
+$title = 'Mein Einkaufswagen';
 $this->headTitle($title);
 ?>
 
@@ -35,7 +35,7 @@ echo $this->navigation()
     <?php echo $this->formSubmit($form->get('submit')); ?>
 </div>
 <div>
-    <h1>Select Buyer</h1>
+    <h1>K&auml;ufer ausw&auml;hlen</h1>
     <?php if(count($order->getPackages()) > 0): ?>
     <p><strong>All e-Tickets will be emailed to the buyer.</strong> If you 
         order items for multiple persons and provided their email addresses, 
@@ -85,7 +85,7 @@ echo $this->navigation()
     endif;
     ?>
     <div>
-        <a class="btn btn-primary<?php echo $login_email == '' ? '' : ' disabled'; ?>" href="<?php echo $this->url('participant', array('action' => 'add')); ?>">add Buyer</a>
+        <a class="btn btn-primary<?php echo $login_email == '' ? '' : ' disabled'; ?>" href="<?php echo $this->url('participant', array('action' => 'add')); ?>">K&auml;ufer hinzuf&uuml;gen</a>
     </div>
 </div>
 

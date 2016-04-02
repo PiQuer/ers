@@ -46,7 +46,7 @@ class PaymentType extends Form
             'name' => 'submit',
             'attributes' => array(
                 'type'  => 'submit',
-                'value' => 'Save & Continue',
+                'value' => 'speichern & weiter',
                 'id' => 'submitbutton',
                 'class' => 'btn btn-primary btn-lg',
             ),
