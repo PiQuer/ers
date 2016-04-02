@@ -1,5 +1,5 @@
 <?php $this->headTitle($product->getName()); ?>
-<a href="<?php echo $this->url($breadcrumb->route, $breadcrumb->params, $breadcrumb->options);?>"><?php echo $this->translate('back to Overview'); ?></a>
+<a href="<?php echo $this->url($breadcrumb->route, $breadcrumb->params, $breadcrumb->options);?>"><?php echo $this->translate('zurück zur Übersicht'); ?></a>
 <?php if($chooser && false): ?>
 <div class="p_overlay">
     <div class="p_overlay_inner">
@@ -8,15 +8,15 @@
         </h3>
         <div class="row">
             <div class="col-sm-6">
-                <p><a class="btn btn-primary" href="<?php echo $this->url('product'); ?>"><i class="fa fa-caret-left"></i> add more products</a></p>
+                <p><a class="btn btn-primary" href="<?php echo $this->url('product'); ?>"><i class="fa fa-caret-left"></i> mehr Produkte hinzuf&uuml;gen</a></p>
                 <p><a class="btn btn-primary" href="<?php echo $this->url(
                     $bc_stay->route, 
                     $bc_stay->params, 
                     $bc_stay->options
-                    ); ?>"><i class="fa fa-caret-left"></i> add this product again</a></p>
+                    ); ?>"><i class="fa fa-caret-left"></i> dieses Produkt erneut hinzuf&uuml;gen</a></p>
             </div>
             <div class="col-sm-6">
-                <a class="btn btn-primary pull-right" href="<?php echo $this->url('order'); ?>">shopping cart <i class="fa fa-caret-right"></i></a>
+                <a class="btn btn-primary pull-right" href="<?php echo $this->url('order'); ?>">Einkaufswagen <i class="fa fa-caret-right"></i></a>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
 <?php endif; ?>
 
 <?php if(count($product->getProductPrices()) == 0): ?>
-    <p class="desc-short">This product is unavailable</p>
+    <p class="desc-short">Dieses Produkt ist nicht verf&uuml;gbar</p>
 <?php else: ?>
 <div class="product-view">
     <?php
@@ -47,7 +47,7 @@
             <?php if($formfail): ?>
             <div class="row">
                 <div class="alert alert-danger">
-                    <p>Please complete the whole form to put this product into the cart.</p>
+                    <p>Bitte das gesamte Formular ausf&uuml;llen, um dieses Produkt in den Einkaufswagen zu legen.</p>
                 </div>
             </div>
             <?php endif; ?>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-md-6">
                     <?php if($product->getPriceCount() != 1): ?>
-                        <p class="small text-right">The prices will increase after<br><?php echo $deadline->getDeadline()->format('d.m.Y H:i:s T'); ?></p>
+                        <p class="small text-right">Diese Preise gelten für die Voranmeldung bis<br><?php echo $deadline->getDeadline()->format('d.m.Y H:i:s T'); ?></p>
                     <?php endif; ?>
                     <?php echo $this->partial('partial/product-price.phtml', array('agegroups' => $agegroups, 'deadline' => $deadline, 'product' => $product)); ?>
                 </div>
@@ -69,7 +69,7 @@
                         <ul>
                             <?php # agegroup is disabled at all this year
                             if(!$product->getPersonalized() && $product->getPriceCount() != 1 && false): ?>
-                                <li><a href="#agegroup">Agegroup</a></li>
+                                <li><a href="#agegroup">Altersgruppe</a></li>
                             <?php endif; ?>
                             <li><a href="#person">Person</a></li>
                         </ul>
@@ -88,9 +88,9 @@
                         <div id="person">
                             <?php if($form->get('submit')->getAttribute('disabled') == 'disabled'): ?>
                                 <div class="alert alert-warning">
-                                    <h4>Please choose a person</h4>
-                                    <p>This is a personalized ticket. To continue, please first 
-                                        <a href="<?php echo $this->url('participant', array('action' => 'add')); ?>">add the person</a> who will use the ticket for the event.</p>
+                                    <h4>Bitte eine Person ausw&auml;hlen</h4>
+                                    <p>Dies ist ein personalisiertes Ticket. Um fortzufahren, bitte erst 
+                                        <a href="<?php echo $this->url('participant', array('action' => 'add')); ?>">eine Person anlegen</a>, die dieses Ticket benutzen wird.</p>
                                     <div class="clear-both"></div>
                                 </div>
                             <?php 
@@ -104,10 +104,10 @@
                              */
                             echo $this->formHidden($form->get('agegroup_id'));
                             ?>
-                            <p><strong>Tip:</strong><br />You can 
+                            <p><strong>Tip:</strong><br />Du kannst 
                                 <!--<a href="<?php echo $this->url('participant', array('action' => 'add')); ?>">add a new person</a>-->
-                                <a href="#" data-toggle="modal" data-target="#addParticipant">add a new person</a>
-                                or edit the details of any person with "My Persons" from the main menu.</p>
+                                <a href="#" data-toggle="modal" data-target="#addParticipant">eine neue Person anlegen</a>
+                                oder die Angaben jeder Person unter "Meine Personen" im Hauptmen&uuml; &auml;ndern.</p>
                         </div>
                     </div>
 
@@ -178,7 +178,7 @@
             </div>
             <div class="modal-footer">
                 <?php echo $this->formSubmit($participantForm->get('submit')); ?>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
             </div>
             <?php echo $this->formHidden($participantForm->get('csrf')); ?>    
             <?php echo $this->form()->closeTag(); ?>
@@ -191,21 +191,21 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">
-                    Added <span class="color-primary"><?php echo $product->getName(); ?></span> to your shopping cart.
+                    <span class="color-primary"><?php echo $product->getName(); ?></span> in den Einkaufwagen gelegt.
                 </h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-6">
-                        <p><a class="btn btn-primary" href="<?php echo $this->url('product'); ?>"><i class="fa fa-caret-left"></i> add more products</a></p>
+                        <p><a class="btn btn-primary" href="<?php echo $this->url('product'); ?>"><i class="fa fa-caret-left"></i> mehr Produkte hinzuf&uuml;gen</a></p>
                         <p><a class="btn btn-primary" href="<?php echo $this->url(
                             $bc_stay->route, 
                             $bc_stay->params, 
                             $bc_stay->options
-                            ); ?>"><i class="fa fa-caret-left"></i> add this product again</a></p>
+                            ); ?>"><i class="fa fa-caret-left"></i> dieses Produkt erneut hinzuf&uuml;gen</a></p>
                     </div>
                     <div class="col-sm-6">
-                        <a class="btn btn-primary pull-right" href="<?php echo $this->url('order'); ?>">shopping cart <i class="fa fa-caret-right"></i></a>
+                        <a class="btn btn-primary pull-right" href="<?php echo $this->url('order'); ?>">Einkaufswagen <i class="fa fa-caret-right"></i></a>
                     </div>
                 </div>
             </div>
