@@ -35,8 +35,8 @@ echo $this->navigation()
             <?php $buyer = $order->getBuyer(); ?>
             <?php if($buyer) : ?>
                 <h2><?php echo $buyer->getFirstname().' '.$buyer->getSurname(); ?></h2>
-                <p>The buyer will receive all e-Tickets for all registered participants. If you have provided an email address per participant, this participant will be informed once the ticket is paid and will be able to download the e-Ticket on his own as well.</p>
-                <h3>We will send all information to: <?php echo $buyer->getEmail(); ?></h3>
+                <p>Der K&auml;ufer wird alle e-Tickets f&uuml;r alle registrierten Teilnehmer erhalten. Falls f&uuml;r einen Teilnehmer eine Emailadresse angegeben wurde wird dieser informiert, sobald das Ticket bezahlt ist, und kann dann das e-Ticket ebenfalls herunterladen.</p>
+                <h3>Alle Informationen gehen an: <?php echo $buyer->getEmail(); ?></h3>
             <?php else: ?>
                 <?php $form->get('submit')->setAttribute('disabled', 'disabled'); ?>
                 <a href="<?php echo $this->url('order', array('action' => 'buyer')); ?>">K&auml;ufer ausw&auml;hlen</a>
@@ -64,7 +64,7 @@ echo $this->navigation()
     </div>
 </div>
 <div>
-    <h1>Shopping Cart</h1>
+    <h1>Einkaufswagen</h1>
         <div>
         <?php 
             $sum = 0;
@@ -77,7 +77,7 @@ echo $this->navigation()
                 if($user->getFirstname() == '' && $user->getSurname() == '') :
                     $participant = 'further items';
                 else:
-                    $participant = $user->getFirstname().' '.$user->getSurname().' ('.$user->getAge()->format('%Y years').')';
+                    $participant = $user->getFirstname().' '.$user->getSurname().' ('.$user->getAge()->format('%Y Jahre').')';
                 endif;
         ?>
             <div class="package">
@@ -86,9 +86,9 @@ echo $this->navigation()
                 <?php if(count($package->getItems()) != 0): ?>
                 <table class="table">
                     <tr>
-                        <th>Product</th>
-                        <th class="cart-amount">Amount</th>
-                        <th class="cart-price">Price</th>
+                        <th>Produkt</th>
+                        <th class="cart-amount">Anzahl</th>
+                        <th class="cart-price">Preis</th>
                     </tr>
                     <?php
                     $subtotal = 0;
@@ -147,7 +147,7 @@ echo $this->navigation()
                     <?php endforeach; ?>
                     <tr>
                         <td></td>
-                        <td>Subtotal:</td>
+                        <td>Zwischensumme:</td>
                         <td><?php echo $this->currencyFormat($subtotal, 'EUR', null, 'de_DE'); ?></td>
                     </tr>
                 </table>
@@ -157,15 +157,15 @@ echo $this->navigation()
         <?php if($paymenttype) : ?>
             <table class="table sum-table">
                 <tr>
-                    <td>Order amount:</td>
+                    <td>Bestellwert:</td>
                     <td><?php echo $this->currencyFormat($order->getPrice(), 'EUR', null, 'de_DE'); ?></td>
                 </tr>
                 <tr>
-                    <td>Payment Charge:</td>
+                    <td>Geb&uuml;hren:</td>
                     <td><?php echo $this->currencyFormat($paymenttype->calcFee($sum), 'EUR', null, 'de_DE'); ?></td>
                 </tr>
                 <tr>
-                    <th><span style="font-size: 18px;">Total amount:</span></th>
+                    <th><span style="font-size: 18px;">Summe:</span></th>
                     <th><span style="font-size: 18px;"><?php echo $this->currencyFormat($order->getSum(), 'EUR', null, 'de_DE'); ?></span></th>
                 </tr>
             </table>
@@ -205,7 +205,7 @@ echo $this->navigation()
                 #echo $this->formLabel($form->get('terms'));
                 echo $this->formElement($form->get('terms'));
             ?>
-                I accept the <a href="<?php echo $this->url('info', array('action' => 'terms')) ?>" class="TnC-show" target="_blank">terms and conditions</a>
+                Ich akzeptiere die <a href="<?php echo $this->url('info', array('action' => 'terms')) ?>" class="TnC-show" target="_blank">Gesch&auml;ftsbedingungen</a>
             </p>
             <div id="TnC-container"></div>
         <?php 
