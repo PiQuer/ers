@@ -48,7 +48,7 @@ class Checkout extends Form
             'name' => 'submit',
             'attributes' => array(
                 'type'  => 'submit',
-                'value' => 'Buy Now',
+                'value' => 'Jetzt kaufen',
                 'id' => 'submitbutton',
                 'class' => 'btn btn-primary btn-lg',
             ),
