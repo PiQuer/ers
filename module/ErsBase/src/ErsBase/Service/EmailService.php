@@ -22,7 +22,7 @@ class EmailService
     protected $textMessage;
     protected $htmlMessage;
     protected $attachments;
-    protected $from = 'prereg@eja.net';
+    protected $from = 'anmeldung@jonglieren-in-freiburg.de';
     protected $to;
     protected $cc;
     protected $bcc;
@@ -290,7 +290,7 @@ class EmailService
                     ->findOneBy(array('id' => $order_id));
         $buyer = $order->getBuyer();
         
-        $this->setFrom('prereg@eja.net');
+        $this->setFrom('anmeldung@jonglieren-in-freiburg.de');
         
         $this->addTo($buyer);
         
@@ -298,7 +298,7 @@ class EmailService
         $bcc->setEmail($this->getFrom());
         $this->addBcc($bcc);
         
-        $subject = "Your registration for EJC 2016 (order ".$order->getCode()->getValue().")";
+        $subject = "Deine Anmeldung zur Freiburger Jonglierconvention 2016 (Buchungsnummer ".$order->getCode()->getValue().")";
         $this->setSubject($subject);
         
         $viewModel = new ViewModel(array(
