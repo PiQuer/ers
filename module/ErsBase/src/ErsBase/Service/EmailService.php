@@ -310,10 +310,12 @@ class EmailService
         
         $this->setHtmlMessage($html);
         
-        $terms1 = getcwd().'/public/Terms-and-Conditions-ERS-EN-v5.pdf';
-        $terms2 = getcwd().'/public/Terms-and-Conditions-ORGA-EN-v4.pdf';
+        $terms1 = getcwd().'/public/AGBs.pdf';
+        $terms2 = getcwd().'/public/Einverstaendnis.pdf';
+        $terms3 = getcwd().'/public/Widerrufsbelehrung.pdf';
         $this->addAttachment($terms1);
         $this->addAttachment($terms2);
+        $this->addAttachment($terms3);
         
         $this->send();
         
