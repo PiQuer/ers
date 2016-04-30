@@ -35,7 +35,15 @@ echo $this->navigation()
             <?php $buyer = $order->getBuyer(); ?>
             <?php if($buyer) : ?>
                 <h2><?php echo $buyer->getFirstname().' '.$buyer->getSurname(); ?></h2>
-                <p>Der K&auml;ufer wird alle e-Tickets f&uuml;r alle registrierten Teilnehmer erhalten. Falls f&uuml;r einen Teilnehmer eine Emailadresse angegeben wurde wird dieser informiert, sobald das Ticket bezahlt ist, und kann dann das e-Ticket ebenfalls herunterladen.</p>
+                <p>Alle Tickets k&ouml;nnen w&auml;hrend des Festivals an der Conventionkasse abgeholt werden. Einzeltickets f&uuml;r die 
+                Gala-Show können auch am 24.06.2016 ab 19 Uhr an der Abendkasse im B&uuml;rgerhaus Z&auml;hringen abgeholt werden.</p>
+                <p>Bitte beachtet, dass wir <b>f&uuml;r Minderj&auml;hrige, die ohne ihre Erziehungsberechtigten an dem Festival teilnehmen 
+                m&ouml;chten</b>, eine schriftliche Erkl&auml;rung eines Erziehungsberechtigten ben&ouml;tigen, aus der die Erlaubnis zur 
+                Teilnahme hervorgeht, in der au&szlig;erdem (wie bei allen Teilnehmern) die Haftung für Verletzungen durch die Organisatoren 
+                ausgeschlossen wird, und in der idealerweise auch eine Betreuungsperson benannt wird! Das Formular dazu findet ihr im Anhang 
+                der Best&auml;tigungsmail oder unter
+                <a href="http://www.jonglieren-in-freiburg.de/?page_id=395">http://www.jonglieren-in-freiburg.de/?page_id=395</a>.
+                </p>
                 <h3>Alle Informationen gehen an: <?php echo $buyer->getEmail(); ?></h3>
             <?php else: ?>
                 <?php $form->get('submit')->setAttribute('disabled', 'disabled'); ?>
@@ -54,12 +62,6 @@ echo $this->navigation()
                 <?php $form->get('submit')->setAttribute('disabled', 'disabled'); ?>
                 <a href="<?php echo $this->url('order', array('action' => 'payment')); ?>">Zahlungsart ausw&auml;hlen</a>
             <?php endif; ?>
-            <!--<h3>Bank Transfer</h3>
-            <p>After successfull purchase you will see the bank account data to transfer the money to. When we matched your payment to your order you will be informed and can download your e-Tickets.</p>
-            <h3>Credit Card</h3>
-            <p>After purchase you will see the credit card formular. After successful payment you will be able to download your e-Tickets.</p>
-            <h3>PayPal</h3>
-            <p>After purchase you will be redirected to a PayPal page. After successful payment you will be able to download your e-Tickets.</p>-->    
         </div>
     </div>
 </div>

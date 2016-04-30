@@ -37,10 +37,7 @@ echo $this->navigation()
 <div>
     <h1>K&auml;ufer ausw&auml;hlen</h1>
     <?php if(count($order->getPackages()) > 0): ?>
-    <p><strong>All e-Tickets will be emailed to the buyer.</strong> If you 
-        order items for multiple persons and provided their email addresses, 
-        they will automatically receive a copy of their e-Ticket.</p>
-    <h3>Choose Buyer</h3>
+    <h3>K&auml;ufer ausw&auml;hlen</h3>
     <?php echo $this->formElementErrors($form->get('buyer_id')); ?>
     <?php 
     foreach($participants as $participant): ?>
@@ -69,11 +66,11 @@ echo $this->navigation()
             <?php if($participant->getEmail() != ''): ?>
                 <p>Email: <?php echo $participant->getEmail(); ?></p>
             <?php else: ?>
-                <p><a href="<?php echo $this->url('participant', array('action' => 'edit', 'id' => $participant->getId())); ?>">Add email address</a> to choose this participant as buyer.</p>
+                <p><a href="<?php echo $this->url('participant', array('action' => 'edit', 'id' => $participant->getId())); ?>">Emailadresse hinzuf&uuml;gen</a> um diesen Teilnehmer als K&auml;ufer auszuw&auml;hlen.</p>
             <?php endif; ?>
 
             <?php if($participant->getBirthday() != null): ?>
-            <p>Birthday: <?php echo $participant->getBirthday()->format('d.m.Y'); ?></p>
+            <p>Geburtstag: <?php echo $participant->getBirthday()->format('d.m.Y'); ?></p>
             <?php endif; ?>
 
         </div>
