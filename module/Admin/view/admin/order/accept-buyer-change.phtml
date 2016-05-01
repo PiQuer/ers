@@ -30,7 +30,7 @@ $this->headTitle($title);
                         if($buyer->getBirthday() != null) {
                             $now = new \DateTime();
                             echo $now->diff($buyer->getBirthday())->format('%y'); 
-                            echo ' years';
+                            echo ' Jahre';
                         }
                     ?></p> 
                 </td>
@@ -55,7 +55,7 @@ $this->headTitle($title);
                         if($user->getBirthday() != null) {
                             $now = new \DateTime();
                             echo $now->diff($user->getBirthday())->format('%y'); 
-                            echo ' years';
+                            echo ' Jahre';
                         }
                     ?></p> 
                 </td>

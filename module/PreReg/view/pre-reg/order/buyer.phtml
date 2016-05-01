@@ -58,7 +58,7 @@ echo $this->navigation()
                     echo $this->formHidden($form->get('buyer_id'));
                 endif; ?>
                 <input type="radio" <?php echo $checked ? 'checked="checked"' : '' ?> <?php echo $disabled ? 'disabled="disabled"' : ''; ?> name="buyer_id" value="<?php echo $participant->getId() ?>" />
-                <?php echo $participant->getFirstname().' '.$participant->getSurname().' ('.$participant->getAge()->format('%Y years').')'; ?>
+                <?php echo $participant->getFirstname().' '.$participant->getSurname().' ('.$participant->getAge()->format('%Y Jahre').')'; ?>
                 <span style="font-size: 14px;">
                     <a href="<?php echo $this->url('participant', array('action' => 'edit', 'id' => $participant->getId())); ?>">edit</a>
                 </span>
