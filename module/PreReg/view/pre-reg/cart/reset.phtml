@@ -16,13 +16,21 @@ else:
     <h1><?php echo $this->escapeHtml($title); ?></h1>
 
     <p>Bist du sicher, dass du den Einkaufswagen und die Liste der Personen leeren m&ouml;chtest?</p>
-    <?php $url = $this->url('cart', array('action' => 'reset')); ?>
-    <form action="<?php echo $url; ?>" method="post">
-    <div>
-        <input type="submit" name="del" value="Ja" class="btn btn-danger" id="submitbutton" />
-        <a href="<?php echo $this->url($breadcrumb->route, $breadcrumb->params, $breadcrumb->options); ?>">Abbrechen</a>
-    </div>
-    </form>
+    
+    <?php
+    #$obj = $form->getObject();
+    $form->setAttribute('action', $this->url('cart', array('action' => 'reset')))
+          ->prepare();
+
+    echo $this->form()->openTag($form);
+
+    echo $this->formHidden($form->get('csrf'));
+    echo $this->formElement($form->get('submit')); ?>
+
+    <a href="<?php echo $this->url($breadcrumb->route, $breadcrumb->params, $breadcrumb->options); ?>">Cancel</a>
+
+    <?php echo $this->form()->closeTag(); ?>
+
 <?php endif;
 
 
