@@ -294,7 +294,7 @@ class Participant extends Form implements InputFilterProviderInterface
                         'name' => 'Callback',
                         'options' => array(
                             'messages' => array(
-                                \Zend\Validator\Callback::INVALID_VALUE => 'Eine Person mit dieser Emailadresse existiert bereits. Für Änderungen der Buchung kontaktiere bitte info@jonglieren-in-freiburg.de.',
+                                \Zend\Validator\Callback::INVALID_VALUE => 'Eine Person mit dieser Emailadresse existiert bereits. Für Änderungen der Buchung kontaktiere bitte orga@jonglieren-in-freiburg.de.',
                             ),
                             'callback' => function($value, $context=array()) {
                                 $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');

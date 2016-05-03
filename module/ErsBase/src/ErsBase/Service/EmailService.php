@@ -22,7 +22,7 @@ class EmailService
     protected $textMessage;
     protected $htmlMessage;
     protected $attachments;
-    protected $from = 'anmeldung@jonglieren-in-freiburg.de';
+    protected $from = 'orga@jonglieren-in-freiburg.de';
     protected $to;
     protected $cc;
     protected $bcc;
@@ -290,7 +290,7 @@ class EmailService
                     ->findOneBy(array('id' => $order_id));
         $buyer = $order->getBuyer();
         
-        $this->setFrom('anmeldung@jonglieren-in-freiburg.de');
+        $this->setFrom('orga@jonglieren-in-freiburg.de');
         
         $this->addTo($buyer);
         
