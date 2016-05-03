@@ -5,12 +5,12 @@ $this->headTitle($title);
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-<p>Are you sure that you want to delete 
+<p>Bist du sicher, das 
     <strong><?php echo $this->escapeHtml($item->getName()); ?></strong>
     <?php if($participant != null): ?>
-    for <strong><?php echo $this->escapeHtml($participant->getFirstname().' '.$participant->getSurname()); ?></strong>
+    von <strong><?php echo $this->escapeHtml($participant->getFirstname().' '.$participant->getSurname()); ?></strong>
     <?php endif; ?>
-    ?
+    zu l&ouml;schen?
 </p>
 
 <?php $obj = $form->getObject();

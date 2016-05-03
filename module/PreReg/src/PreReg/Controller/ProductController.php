@@ -500,7 +500,7 @@ class ProductController extends AbstractActionController {
 
         $form = new Form\SimpleForm($em);
         $form->get('submit')->setAttributes(array(
-            'value' => 'Delete',
+            'value' => 'Löschen',
             'class' => 'btn btn-danger',
         ));
         
