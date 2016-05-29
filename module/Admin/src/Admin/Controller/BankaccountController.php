@@ -222,7 +222,7 @@ class BankaccountController extends AbstractActionController {
                 );
                 $bankaccount->setStatementFormat(json_encode($format));
                 
-                $hashes = array();
+                /*$hashes = array();
                 foreach($bankaccount->getBankStatements() as $statement) {
                     $amountCol = $statement->getAmount();
                     $amountCol->setValue((float) $amountCol->getValue());
@@ -250,7 +250,7 @@ class BankaccountController extends AbstractActionController {
 
                     $hashes[] = $statement->getHash();
                     $em->persist($statement);
-                }
+                }*/
                 
                 $em->persist($bankaccount);
                 $em->flush();

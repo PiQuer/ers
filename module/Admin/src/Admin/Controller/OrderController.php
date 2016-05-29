@@ -720,7 +720,6 @@ class OrderController extends AbstractActionController {
                 $em->persist($order);
                 
                 foreach($order->getItems() as $item) {
-                    #$item->setStatus('cancelled');
                     $item->setStatus($status);
                     $em->persist($item);
                 }
@@ -766,8 +765,11 @@ class OrderController extends AbstractActionController {
                 $order->setPaymentStatus('paid');
                 $em->persist($order);
                 
+                $statusPaid = $em->getRepository('ErsBase\Entity\Status')
+                    ->findOneBy(array('value' => 'paid'));
+                
                 foreach($order->getItems() as $item) {
-                    $item->setStatus('paid');
+                    $item->setStatus($statusPaid);
                     $em->persist($item);
                 }
                 
@@ -817,7 +819,6 @@ class OrderController extends AbstractActionController {
                 $em->persist($order);
                 
                 foreach($order->getItems() as $item) {
-                    #$item->setStatus('refund');
                     $item->setStatus($status);
                     $em->persist($item);
                 }
@@ -868,7 +869,6 @@ class OrderController extends AbstractActionController {
                 $em->persist($order);
                 
                 foreach($order->getItems() as $item) {
-                    #$item->setStatus('ordered');
                     $item->setStatus($status);
                     $em->persist($item);
                 }
