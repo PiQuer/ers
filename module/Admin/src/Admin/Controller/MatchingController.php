@@ -232,7 +232,7 @@ class MatchingController extends AbstractActionController {
                 
                 $statement_sum = 0;
                 foreach($statements as $statement) {
-                    $statement_sum += (float) $statement->getAmount()->getValue();
+                    $statement_sum += $statement->getAmountValue();
                 }
                 
                 /*
@@ -262,7 +262,8 @@ class MatchingController extends AbstractActionController {
                         $match->setBankStatement($statement);
                         $user = $this->zfcUserAuthentication()->getIdentity();
                         #$match->setAdminId($this->zfcUserAuthentication()->getIdentity()->getId());
-                        $match->setAdmin($user);
+                        #$match->setAdmin($user);
+                        $match->setUser($user);
                         $match->setComment($data['comment']);
                         
                         $em->persist($match);
