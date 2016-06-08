@@ -458,10 +458,10 @@ class OrderController extends AbstractActionController {
                 $emailService->addTo($buyer);
 
                 $bcc = new Entity\User();
-                $bcc->setEmail('prereg@eja.net');
+                $bcc->setEmail('orga@jonglieren-in-freiburg.de');
                 $emailService->addBcc($bcc);
 
-                $subject = "[EJC 2016] Payment reminder for your order: ".$order->getCode()->getValue();
+                $subject = "[Freiburger Jonglierfestival 2016] Erinnerung an Deine Bestellung ".$order->getCode()->getValue();
                 $emailService->setSubject($subject);
 
                 $viewModel = new ViewModel(array(

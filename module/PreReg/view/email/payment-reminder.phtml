@@ -29,34 +29,31 @@
         </style>
     </head>
     <body>
-        <div class='header'>EJC 2016 - 30.07.2016 - 07.08.2016 in Almere, The Netherlands - <a href='http://www.ejc2016.org'>www.ejc2016.org</a></div>
+        <div class='header'>Freiburger Jonglierfestival 2016 - 24.-26.06.2016 - <a href='http://www.jonglieren-in-freiburg.de'>www.jonglieren-in-freiburg.de</a></div>
 
-        <p>Dear <?php echo $order->getBuyer()->getFirstname().' '.$order->getBuyer()->getSurname(); ?>,</p>
+        <p>Hallo <?php echo $order->getBuyer()->getFirstname().' '.$order->getBuyer()->getSurname(); ?>,</p>
 
-        <p>you registered for the EJC at <?php echo $order->getCreated()->format('d.m.Y') ?> and we hope you're looking forward to it.
-        We haven't sent you an e-ticket yet, because we haven't received payment for your order.</p>
+        <p>sch&ouml;n, dass Du dich am <?php echo $order->getCreated()->format('d.m.Y') ?> zum 18. Freiburger Jonglierfestival 2016 angemeldet hast!
+        Leider wurde(n) Dein(e) Ticket(s) noch nicht bezahlt. Wir bitten Dich,
+        dies nachzuholen, da Deine Voranmeldung erst mit der Bezahlung der Tickets abgeschlossen ist!</p>
 
-        <p>Please do one of the following until 17.07.2016 at the latest.</p>
-        <ul>
-            <li>Please pay your order at 
-                <a href="<?php echo $this->url('order', array('action' => 'view', 'hashkey' => $order->getHashKey()), array('force_canonical' => true)); ?>">
-                    <?php echo $this->url('order', array('action' => 'view', 'hashkey' => $order->getHashKey()), array('force_canonical' => true)); ?>
-                </a>
-            </li>
-            <li>Let us know if you'd like to transfer your ticket to somebody else (necessary data: first name, last name, date of birth and email address of the new participant)</li>
-            <li>If none of the above options are possible for you, let us know if you'd like us to cancel your ticket.</li>
-        </ul>
+        <p>Bitte &uuml;berweise den Betrag innerhalb von 7 Tagen unter Angabe Deiner Buchungsnummber <b><?php echo $order->getCode()->getValue(); ?></b>, um die Buchung abzuschlie&szlig;en.</p>
 
-        <p>Best regards,<br />
-        Your European Juggling Association and the local EJC 2016 organizers</p>
-        
-        <div class='footer'>This mail was sent to you by the EJC Registration 
-            System (ERS), operated by the European Juggling Association (EJA) on 
-            behalf of EJC 2016.<br />If you have any questions about your
-            pre-registration, please contact the EJA pre-registration 
-            coordinator at <a href='mailto:prereg@eja.net'>prereg@eja.net</a>.<br />
-            For more information about EJC 2016, please visit
-            <a href='http://www.ejc2016.org'>http://www.ejc2016.org</a> or
-            contact <a href='mailto:info@ejc2016.org'>info@ejc2016.org</a>.</div>
+        <?php echo $this->partial('partial/banktransfer-info.phtml', array('order' => $order)); ?>
+
+        <p>
+            Um zu sehen, ob wir die Zahlung bereits erhalten haben, kannst Du diesem Link folgen:
+            <a href="<?php echo $this->url('order', array(
+                'action' => 'view',
+                'hashkey' => $order->getHashKey()
+            ), array('force_canonical' => true)); ?>">Deine Buchungsinformationen</a>
+        </p>
+
+        <p>Falls Du bereits bezahlt hast, Du Deine Bestellung stornieren oder &auml;ndern m&ouml;chtest oder Du andere Fragen zur Voranmeldung hast, schicke
+        bitte eine Email an <a href='mailto:orga@jonglieren-in-freiburg.de'>orga@jonglieren-in-freiburg.de</a>.</p>
+
+        <p>Vielen Dank und die besten Gr&uuml;&szlig;e aus Freiburg!</p>
+
+        <p>Dein Orga-Team</p>
     </body>
 </html>
