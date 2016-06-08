@@ -35,9 +35,7 @@
 
         <p>sch&ouml;n, dass Du dich am <?php echo $order->getCreated()->format('d.m.Y') ?> zum 18. Freiburger Jonglierfestival 2016 angemeldet hast!
         Leider wurde(n) Dein(e) Ticket(s) noch nicht bezahlt. Wir bitten Dich,
-        dies nachzuholen, da Deine Voranmeldung erst mit der Bezahlung der Tickets abgeschlossen ist!</p>
-
-        <p>Bitte &uuml;berweise den Betrag innerhalb von 7 Tagen unter Angabe Deiner Buchungsnummber <b><?php echo $order->getCode()->getValue(); ?></b>, um die Buchung abzuschlie&szlig;en.</p>
+        dies innerhalb von 7 Tagen nachzuholen, da Deine Voranmeldung erst mit der Bezahlung der Tickets abgeschlossen ist!</p>
 
         <?php echo $this->partial('partial/banktransfer-info.phtml', array('order' => $order)); ?>
 
