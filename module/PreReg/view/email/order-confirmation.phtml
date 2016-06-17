@@ -29,7 +29,7 @@
     $paymenttype = $order->getPaymentType();
     if($paymenttype->getType() == 'BankTransfer'): ?>
 
-        <p>Bitte &uuml;berweise den Betrag innerhalb von 7 Tagen, um die Buchung abzuschlie&szlig;en.</p>
+        <p>Bitte &uuml;berweise den Betrag bis 23.06., um die Buchung abzuschlie&szlig;en.</p>
 
         <?php echo $this->partial('partial/banktransfer-info.phtml', array('order' => $order)); ?>
 
