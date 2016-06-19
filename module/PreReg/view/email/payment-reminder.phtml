@@ -35,9 +35,16 @@
 
         <p>sch&ouml;n, dass Du dich am <?php echo $order->getCreated()->format('d.m.Y') ?> zum 18. Freiburger Jonglierfestival 2016 angemeldet hast!
         Leider wurde(n) Dein(e) Ticket(s) noch nicht bezahlt. Wir bitten Dich,
-        dies innerhalb von 7 Tagen nachzuholen, da Deine Voranmeldung erst mit der Bezahlung der Tickets abgeschlossen ist!</p>
+        dies <b>bis sp&auml;testens 23.06.2016</b> nachzuholen, da Deine Voranmeldung erst mit der Bezahlung der Tickets abgeschlossen ist!</p>
 
         <?php echo $this->partial('partial/banktransfer-info.phtml', array('order' => $order)); ?>
+
+        <p>
+          <b>
+          Wichtig: Sollte das Geld bis zu diesem Datum nicht überwiesen sein, kann der Preis der Voranmeldung nicht mehr gelten und Du musst bei Deiner Anreise
+          den Vor-Ort-Tarif bezahlen.
+          </b> Diesen kannst du <a href='http://www.jonglieren-in-freiburg.de/wp-content/uploads/2010/03/Preisliste_2016.pdf'>hier</a> einsehen.
+        </p>
 
         <p>
             Um zu sehen, ob wir die Zahlung bereits erhalten haben, kannst Du diesem Link folgen:
